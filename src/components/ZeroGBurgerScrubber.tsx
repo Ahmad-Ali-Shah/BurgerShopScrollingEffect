@@ -265,10 +265,14 @@ export const ZeroGBurgerScrubber: React.FC<ZeroGBurgerScrubberProps> = ({
         className="absolute inset-0 w-full h-full pointer-events-none z-10"
       />
 
-      {/* Main Scrubber Canvas with Radial Vignette Mask */}
+      {/* Main Scrubber Canvas with WebKit Radial Vignette Feathering */}
       <canvas
         ref={canvasRef}
-        className="relative z-20 w-full h-full max-w-[650px] max-h-[650px] object-contain mix-blend-screen [mask-image:radial-gradient(circle_at_center,black_65%,transparent_98%)] cursor-grab active:cursor-grabbing"
+        style={{
+          WebkitMaskImage: 'radial-gradient(circle at center, black 45%, transparent 85%)',
+          maskImage: 'radial-gradient(circle at center, black 45%, transparent 85%)',
+        }}
+        className="relative z-20 w-full h-full max-w-[650px] max-h-[650px] object-contain mix-blend-screen filter contrast-125 brightness-90 cursor-grab active:cursor-grabbing"
       />
 
       {/* Frame Loading HUD Badge */}
