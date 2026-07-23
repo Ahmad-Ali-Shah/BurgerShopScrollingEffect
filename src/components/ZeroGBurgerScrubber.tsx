@@ -265,25 +265,19 @@ export const ZeroGBurgerScrubber: React.FC<ZeroGBurgerScrubberProps> = ({
         className="absolute inset-0 w-full h-full pointer-events-none z-10"
       />
 
-      {/* Main Scrubber Canvas */}
+      {/* Main Scrubber Canvas with Radial Vignette Mask */}
       <canvas
         ref={canvasRef}
-        className="relative z-20 w-full h-full max-w-[650px] max-h-[650px] object-contain cursor-grab active:cursor-grabbing"
+        className="relative z-20 w-full h-full max-w-[650px] max-h-[650px] object-contain mix-blend-screen [mask-image:radial-gradient(circle_at_center,black_65%,transparent_98%)] cursor-grab active:cursor-grabbing"
       />
 
-      {/* Frame Loading HUD */}
+      {/* Frame Loading HUD Badge */}
       {!isLoaded && (
-        <div className="absolute z-30 flex flex-col items-center justify-center p-6 rounded-xl bg-[#0A0000]/90 border border-[#FF1A1A]/40 backdrop-blur-md">
-          <div className="w-12 h-12 rounded-full border-2 border-t-[#FF1A1A] border-r-[#FFB000] border-b-transparent border-l-transparent animate-spin mb-3" />
+        <div className="absolute z-30 bottom-16 flex items-center space-x-3 px-5 py-2.5 rounded-full bg-[#0A0000]/95 border border-[#FF1A1A]/60 shadow-[0_0_20px_#FF1A1A] backdrop-blur-md">
+          <div className="w-4 h-4 rounded-full border-2 border-t-[#FF1A1A] border-r-[#FFB000] border-b-transparent border-l-transparent animate-spin" />
           <span className="font-mono text-xs text-[#FF1A1A] tracking-widest uppercase animate-pulse">
             CALIBRATING ZERO-G FRAMES ({Math.floor((loadedCount / TOTAL_FRAMES) * 100)}%)
           </span>
-          <div className="w-48 h-1.5 bg-[#1A0000] rounded-full overflow-hidden mt-3 border border-[#FF1A1A]/30">
-            <div
-              className="h-full bg-gradient-to-r from-[#FF1A1A] to-[#FFB000] transition-all duration-150"
-              style={{ width: `${(loadedCount / TOTAL_FRAMES) * 100}%` }}
-            />
-          </div>
         </div>
       )}
 
