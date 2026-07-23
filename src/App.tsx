@@ -8,6 +8,8 @@ import { TechSpecsSection } from './components/TechSpecsSection';
 import { OutroSection } from './components/OutroSection';
 import { OrderModal } from './components/OrderModal';
 import { AsciiScannerOverlay } from './components/AsciiScannerOverlay';
+import { CustomCursor } from './components/CustomCursor';
+import { Preloader } from './components/Preloader';
 
 export function App() {
   const [isAsciiModalOpen, setIsAsciiModalOpen] = useState(false);
@@ -45,6 +47,12 @@ export function App() {
 
   return (
     <div className="relative min-h-screen bg-[#0A0000] text-white selection:bg-[#FF1A1A] selection:text-black">
+      {/* Futuristic Fullscreen Loading Overlay */}
+      <Preloader />
+
+      {/* Custom Neon Laser HUD Cursor */}
+      <CustomCursor />
+
       {/* Navigation Header */}
       <Navbar
         onOpenAsciiModal={() => setIsAsciiModalOpen(true)}
