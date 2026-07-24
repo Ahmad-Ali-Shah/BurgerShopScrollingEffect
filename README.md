@@ -12,12 +12,12 @@ The experience is divided into five animated sections that guide the user throug
 
 Highlights include:
 
-- 🍔 Scroll-driven cinematic storytelling
-- 🎥 HTML5 Canvas frame scrubbing
-- ✨ Smooth inertial scrolling with Lenis
-- 🎮 Interactive ASCII renderer
-- 🌌 Depth, parallax, and particle effects
-- ⚡ Built with React + TypeScript + Vite
+-  Scroll-driven cinematic storytelling
+-  HTML5 Canvas frame scrubbing
+-  Smooth inertial scrolling with Lenis
+-  Interactive ASCII renderer
+-  Depth, parallax, and particle effects
+-  Built with React + TypeScript + Vite
 
 ---
 
